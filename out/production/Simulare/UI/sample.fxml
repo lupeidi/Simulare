@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox alignment="CENTER" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="UI.Controller">
+  <VBox>
+    <Label text="List of events:" />
+    <TableView fx:id="tableViewEvent">
+      <columns>
+        <TableColumn text="id" fx:id="tableColumnId">
+          <cellValueFactory>
+            <PropertyValueFactory property="id" />
+          </cellValueFactory>
+        </TableColumn>
+        <TableColumn text="Name" fx:id="tableColumnName">
+          <cellValueFactory>
+            <PropertyValueFactory property="name" />
+          </cellValueFactory>
+        </TableColumn>
+        <TableColumn text="Date" fx:id="tableColumnDate">
+          <cellValueFactory>
+            <PropertyValueFactory property="day" />
+          </cellValueFactory>
+        </TableColumn>
+        <TableColumn text="Duration" fx:id="tableColumnDuration">
+          <cellValueFactory>
+            <PropertyValueFactory property="duration" />
+          </cellValueFactory>
+        </TableColumn>
+        <TableColumn text="Time" fx:id="tableColumnTime">
+          <cellValueFactory>
+            <PropertyValueFactory property="time" />
+          </cellValueFactory>
+        </TableColumn>
+      </columns>
+    </TableView>
+    <Button id="btnEventAdd" fx:id="btnAdd" onAction="#btnAddClick" text="Add Event" />
+    <HBox alignment="BOTTOM_RIGHT">
+      <TextField id="txtEventDateForMax" fx:id="txtDateForMaxEvent" prefHeight="25.0" prefWidth="110.0" promptText="Date" />
+      <Button id="btnMaxOfEvents" fx:id="btnMax" onAction="#btnMaxClick" text="Max of events" />
+      <Pane prefHeight="0.0" prefWidth="11.0" />
+      <Label fx:id="max" prefHeight="26.0" prefWidth="100.0" />
+    </HBox>
+  </VBox>
+</HBox>
